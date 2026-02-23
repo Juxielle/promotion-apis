@@ -1,0 +1,68 @@
+<?php
+
+namespace App\EntityClasses;
+
+abstract class EntityField
+{
+    const ID = "id";
+    const NAME = "name";
+    const TITLE = "title";
+    const LABEL = "label";
+    const VALUE = "value";
+    const TYPE = "type";
+    const ROLE = "role";
+    const TELEPHONE = "telephone";
+    const TELEPHONE_2 = "telephone_2";
+    const FIRSTNAME = "firstname";
+    const SEX = "sex";
+    const BIRTHDAY = "birthday";
+    const BIRTHPLACE = "birthplace";
+    const MOTHER_NAME = "mother_name";
+    const FATHER_NAME = "father_name";
+    const PHOTO = "photo";
+    const MARITAL_STATUS = "marital_status";
+    const CHILDREN_COUNT = "children_count";
+    const NEIGHBORHOOD = "neighborhood";
+    const CITY = "city";
+    const COUNTRY = "country";
+    const PAYMENT_MODE = "payment_mode";
+    const NATIONALITY = "nationality";
+    const POSTAL_CODE = "postal_code";
+    const EMAIL = "email";
+    const CODE = "code";
+    const YOUNG_GIRL_NAME = "young_girl_name";
+    const FOLDER_NUMBER = "folder_number";
+    const CREATED_AT = "created_at";
+    const UPDATED_AT = "updated_at";
+    const REGISTRATION = "registration";
+    const ADDRESS = "address";
+    const PASSWORD = "password";
+    const NEW_PASSWORD = "new_password";
+    const ROLE_ID = "role_id";
+    const PERMISSION_ID = "permission_id";
+    const USER_ID = "user_id";
+    const BEGIN = "begin";
+    const END = "end";
+    const STATUS = "status";
+    const PROPORTION = "proportion";
+    const IS_SERVICE = "is_service";
+    const IMAGE = "image";
+    const ARTICLE_COUNT = "article_count";
+    const PRODUCT_ID = "product_id";
+    const SERVICE_ID = "service_id";
+    const SELLER_ID = "payment_id";
+    const PAYMENT_ID = "seller_id";
+    const PRICE = "price";
+    const PROMOTIONAL_PRICE = "promotional_price";
+    const CATEGORY_ID = "category_id";
+    const REFERENCE_CODE = "reference_code";
+    const DESCRIPTION = "description";
+    const MARK = "mark";
+    const COMPATIBLE_MODELS = "compatible_models";
+    const WEIGHT = "weight";
+    const MEASURE_UNIT = "measure_unit";
+    const ORDER_ID = "order_id";
+    const CUSTOMER_ID = "customer_id";
+    const TOTAL_PRICE = "total_price";
+    const PAYMENT_MEAN_ID = "payment_mean_id";
+};
