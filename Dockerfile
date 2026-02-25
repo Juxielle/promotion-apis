@@ -24,8 +24,10 @@ RUN chown -R www-data:www-data storage bootstrap/cache
 # Config Apache vers dossier public
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
-EXPOSE 80
+# Cache Laravel (production)
+RUN php artisan config:cache || true
+RUN php artisan route:cache || true
+RUN php artisan view:cache || true
+RUN php artisan optimize || true
 
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+EXPOSE 80
