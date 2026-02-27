@@ -1,33 +1,20 @@
-FROM php:8.2-apache
+FROM richarvey/nginx-php-fpm:3.1.6
 
-# Installer dépendances système
-RUN apt-get update && apt-get install -y \
-    git unzip libpng-dev libonig-dev libxml2-dev zip curl \
-    && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
-
-# Installer Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-# Activer mod_rewrite Apache
-RUN a2enmod rewrite
-
-# Copier projet
-WORKDIR /var/www/html
 COPY . .
 
-# Installer dépendances Laravel
-RUN composer install --no-dev --optimize-autoloader
+# Image config
+ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/public
+ENV PHP_ERRORS_STDERR 1
+ENV RUN_SCRIPTS 1
+ENV REAL_IP_HEADER 1
 
-# Permissions Laravel
-RUN chown -R www-data:www-data storage bootstrap/cache
+# Laravel config
+ENV APP_ENV production
+ENV APP_DEBUG false
+ENV LOG_CHANNEL stderr
 
-# Config Apache vers dossier public
-RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
+# Allow composer to run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Cache Laravel (production)
-RUN php artisan config:cache || true
-RUN php artisan route:cache || true
-RUN php artisan view:cache || true
-RUN php artisan optimize || true
-
-EXPOSE 80
+CMD ["/start.sh"]
