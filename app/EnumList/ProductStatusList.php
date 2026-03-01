@@ -16,8 +16,8 @@ class ProductStatusList extends ItemList
                 value: "Active"
             ),
             new ItemEnum(
-                key: Constant::SEX_F,
-                value: "Femme"
+                key: Constant::SUSPENDED,
+                value: "Suspendu"
             ),
         ];
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Classes\Constant;
 use App\Classes\Page;
+use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;

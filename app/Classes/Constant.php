@@ -26,6 +26,7 @@ class Constant
     const PAGES_COUNT = 20;
     const ACTIVE = "active";
     const BLOCKED = "blocked";
+    const SUSPENDED = "suspended";
     const CREDIT_CARD = "credit-card";
     const AIRTEL_MONEY = "airtel-money";
     const MOOV_MONEY = "moov-money";
@@ -33,11 +34,10 @@ class Constant
     const IN_PROGRESS = "in-progress";
     const DELIVERED = "delivered";
 
-    const OLDESS_PENSION = "oldess-pension";
-    const SURVIVOR_PENSION = "survivor-pension";
-    const INVALIDITY_PENSION = "invalidity-pension";
-    const ANTICIPED_PENSION = "anticiped-pension";
-    const PASSPORT_REQUEST = "passport-request";
+    const G = "g";
+    const KG = "kg";
+    const L = "l";
+    const ML = "ml";
 
     const FILE_PATH = "documents";
     const TEMP_FILE_PATH = "files-temp";

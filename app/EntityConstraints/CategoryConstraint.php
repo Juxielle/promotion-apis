@@ -18,19 +18,18 @@ class CategoryConstraint extends EntityConstraint
         $this->list = [
             new EntityModel(
                 type: EntityType::STRING,
-                name: EntityField::LABEL,
-                label: FieldLabel::LABEL
-            ),
-            new EntityModel(
-                type: EntityType::STRING,
                 name: EntityField::CODE,
                 label: FieldLabel::CODE
             ),
             new EntityModel(
                 type: EntityType::STRING,
-                name: EntityField::IS_SERVICE,
-                label: FieldLabel::IS_SERVICE,
-                value: "false"
+                name: EntityField::LABEL,
+                label: FieldLabel::LABEL
+            ),
+            new EntityModel(
+                type: EntityType::INTEGER,
+                name: EntityField::CATEGORY_ID,
+                isNullable: true
             ),
         ];
 

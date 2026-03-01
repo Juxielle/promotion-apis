@@ -22,7 +22,9 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $fillable = [
         EntityField::NAME,
+        EntityField::FIRSTNAME,
         EntityField::EMAIL,
+        EntityField::TELEPHONE,
         EntityField::PASSWORD,
         EntityField::ROLE_ID,
     ];

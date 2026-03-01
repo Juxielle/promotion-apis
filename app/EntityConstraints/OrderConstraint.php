@@ -25,13 +25,6 @@ class OrderConstraint extends EntityConstraint
                 referenceTable: EntityTable::CUSTOMERS
             ),
             new EntityModel(
-                type: EntityType::INTEGER,
-                name: EntityField::PAYMENT_ID,
-                isForeignKey: true,
-                referenceKey: EntityField::ID,
-                referenceTable: EntityTable::PAYMENTS
-            ),
-            new EntityModel(
                 type: EntityType::ENUM,
                 name: EntityField::STATUS,
                 label: FieldLabel::STATUS,

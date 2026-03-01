@@ -50,7 +50,7 @@ abstract class EntityField
     const ARTICLE_COUNT = "article_count";
     const PRODUCT_ID = "product_id";
     const SERVICE_ID = "service_id";
-    const SELLER_ID = "payment_id";
+    const SELLER_ID = "seller_id";
     const PAYMENT_ID = "seller_id";
     const PRICE = "price";
     const PROMOTIONAL_PRICE = "promotional_price";

@@ -40,7 +40,8 @@ class ProductConstraint extends EntityConstraint
             new EntityModel(
                 type: EntityType::JSON,
                 name: EntityField::COMPATIBLE_MODELS,
-                label: FieldLabel::COMPATIBLE_MODELS
+                label: FieldLabel::COMPATIBLE_MODELS,
+                isNullable: true
             ),
             new EntityModel(
                 type: EntityType::FLOAT,
@@ -65,7 +66,7 @@ class ProductConstraint extends EntityConstraint
                 name: EntityField::MEASURE_UNIT,
                 label: FieldLabel::MEASURE_UNIT,
                 listEnum: (new MeasureUnitList())->keys(),
-                value: Constant::CREDIT_CARD
+                value: Constant::G
             ),
             new EntityModel(
                 type: EntityType::ENUM,

@@ -12,16 +12,20 @@ class MeasureUnitList extends ItemList
     {
         $this->list = [
             new ItemEnum(
-                key: Constant::CREDIT_CARD,
-                value: "Carte de visa"
+                key: Constant::G,
+                value: "Gramme"
             ),
             new ItemEnum(
-                key: Constant::AIRTEL_MONEY,
-                value: "Airtel Money"
+                key: Constant::KG,
+                value: "Kilogramme"
             ),
             new ItemEnum(
-                key: Constant::MOOV_MONEY,
-                value: "Moov Money"
+                key: Constant::L,
+                value: "Litre"
+            ),
+            new ItemEnum(
+                key: Constant::ML,
+                value: "Millilitre"
             ),
         ];
 

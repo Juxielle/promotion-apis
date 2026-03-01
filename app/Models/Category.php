@@ -15,6 +15,5 @@ class Category extends Model
     protected $fillable = [
         EntityField::LABEL,
         EntityField::CODE,
-        EntityField::IS_SERVICE,
     ];
 }

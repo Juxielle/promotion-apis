@@ -44,10 +44,10 @@ Route::group(['middleware' => ['jwt.verify'], 'prefix' => 'auth'], function () {
     Route::prefix('users')->group(function () {
         Route::get('/', [UserList::class, 'list']);
         Route::get('/{user}', [UserById::class, 'byId']);
+        Route::post('/logout', [AuthLogout::class, 'logout']);
         Route::post('/', [UserStore::class, 'store']);
         Route::post('/{user}', [UserUpdate::class, 'update']);
         Route::delete('/delete/{user}', [UserDelete::class, 'delete']);
-        Route::post('/logout', [AuthLogout::class, 'logout']);
     });
 
     Route::prefix('products')->group(function () {

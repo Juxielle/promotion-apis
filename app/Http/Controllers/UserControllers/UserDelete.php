@@ -18,7 +18,7 @@ class UserDelete extends Controller
         $deleted = $user->delete();
 
         return response()->json([
-            'message' => $message,
+            'message' => "Suppression utilisation",
             'success' => $deleted
         ], $deleted ? Response::HTTP_OK : Response::HTTP_BAD_REQUEST);
     }
