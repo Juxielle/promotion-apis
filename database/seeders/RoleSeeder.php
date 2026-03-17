@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Classes\Constant;
 use App\EntityClasses\EntityField;
 use App\Models\Role;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class RoleSeeder extends Seeder
@@ -15,28 +15,28 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         Role::create([
-            EntityField::LABEL => 'Utilisateur racine',
-            EntityField::CODE => 'root',
+            EntityField::LABEL => Constant::ROOT_LABEL,
+            EntityField::CODE => Constant::ROOT_CODE,
         ]);
         Role::create([
-            EntityField::LABEL => 'Super administrateur',
-            EntityField::CODE => 'super-admin',
+            EntityField::LABEL => Constant::SUPER_ADMIN_LABEL,
+            EntityField::CODE => Constant::SUPER_ADMIN_CODE,
         ]);
         Role::create([
-            EntityField::LABEL => 'Administrateur',
-            EntityField::CODE => 'admin',
+            EntityField::LABEL => Constant::ADMIN_LABEL,
+            EntityField::CODE => Constant::ADMIN_CODE,
         ]);
         Role::create([
-            EntityField::LABEL => 'Client',
-            EntityField::CODE => 'customer',
+            EntityField::LABEL => Constant::CUSTOMER_LABEL,
+            EntityField::CODE => Constant::CUSTOMER_CODE,
         ]);
         Role::create([
-            EntityField::LABEL => 'Vendeur',
-            EntityField::CODE => 'seller',
+            EntityField::LABEL => Constant::SELLER_LABEL,
+            EntityField::CODE => Constant::SELLER_CODE,
         ]);
         Role::create([
-            EntityField::LABEL => 'Fournisseur',
-            EntityField::CODE => 'provider',
+            EntityField::LABEL => Constant::PROVIDER_LABEL,
+            EntityField::CODE => Constant::PROVIDER_CODE,
         ]);
     }
 }

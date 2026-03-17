@@ -15,11 +15,25 @@ use App\Http\Controllers\OrderControllers\OrderById;
 use App\Http\Controllers\OrderControllers\OrderDelete;
 use App\Http\Controllers\OrderControllers\OrderList;
 use App\Http\Controllers\OrderControllers\OrderStore;
+use App\Http\Controllers\PermissionControllers\PermissionById;
+use App\Http\Controllers\PermissionControllers\PermissionDelete;
+use App\Http\Controllers\PermissionControllers\PermissionList;
+use App\Http\Controllers\PermissionControllers\PermissionStore;
+use App\Http\Controllers\PermissionControllers\PermissionUpdate;
 use App\Http\Controllers\ProductControllers\ProductById;
 use App\Http\Controllers\ProductControllers\ProductDelete;
 use App\Http\Controllers\ProductControllers\ProductList;
 use App\Http\Controllers\ProductControllers\ProductStore;
 use App\Http\Controllers\ProductControllers\ProductUpdate;
+use App\Http\Controllers\PromotionControllers\PromotionById;
+use App\Http\Controllers\PromotionControllers\PromotionDelete;
+use App\Http\Controllers\PromotionControllers\PromotionList;
+use App\Http\Controllers\PromotionControllers\PromotionStore;
+use App\Http\Controllers\RoleControllers\RoleById;
+use App\Http\Controllers\RoleControllers\RoleDelete;
+use App\Http\Controllers\RoleControllers\RoleList;
+use App\Http\Controllers\RoleControllers\RoleStore;
+use App\Http\Controllers\RoleControllers\RoleUpdate;
 use App\Http\Controllers\ServiceControllers\ServiceById;
 use App\Http\Controllers\ServiceControllers\ServiceDelete;
 use App\Http\Controllers\ServiceControllers\ServiceList;
@@ -38,6 +52,7 @@ Route::post('/forget-password', [AuthForgetPassword::class, 'forgetPassword']);
 Route::post('/change-password', [AuthChangePassword::class, 'changePassword']);
 Route::post('/send-code', [AuthSendCode::class, 'sendCode']);
 Route::post('/confirm-code', [AuthConfirmCode::class, 'confirmCode']);
+
 Route::post('/users', [UserStore::class, 'store']);
 
 Route::group(['middleware' => ['jwt.verify'], 'prefix' => 'auth'], function () {
@@ -48,6 +63,22 @@ Route::group(['middleware' => ['jwt.verify'], 'prefix' => 'auth'], function () {
         Route::post('/', [UserStore::class, 'store']);
         Route::post('/{user}', [UserUpdate::class, 'update']);
         Route::delete('/delete/{user}', [UserDelete::class, 'delete']);
+    });
+
+    Route::prefix('roles')->group(function () {
+        Route::get('/', [RoleList::class, 'list']);
+        Route::get('/{role}', [RoleById::class, 'byId']);
+        Route::post('/', [RoleStore::class, 'store']);
+        Route::post('/{role}', [RoleUpdate::class, 'update']);
+        Route::delete('/delete/{role}', [RoleDelete::class, 'delete']);
+    });
+
+    Route::prefix('permissions')->group(function () {
+        Route::get('/', [PermissionList::class, 'list']);
+        Route::get('/{permission}', [PermissionById::class, 'byId']);
+        Route::post('/', [PermissionStore::class, 'store']);
+        Route::post('/{permission}', [PermissionUpdate::class, 'update']);
+        Route::delete('/delete/{permission}', [PermissionDelete::class, 'delete']);
     });
 
     Route::prefix('products')->group(function () {
@@ -79,5 +110,12 @@ Route::group(['middleware' => ['jwt.verify'], 'prefix' => 'auth'], function () {
         Route::get('/{order}', [OrderById::class, 'byId']);
         Route::post('/', [OrderStore::class, 'store']);
         Route::delete('/delete/{order}', [OrderDelete::class, 'delete']);
+    });
+
+    Route::prefix('promotions')->group(function () {
+        Route::get('/', [PromotionList::class, 'list']);
+        Route::get('/{promotion}', [PromotionById::class, 'byId']);
+        Route::post('/', [PromotionStore::class, 'store']);
+        Route::delete('/delete/{promotion}', [PromotionDelete::class, 'delete']);
     });
 });

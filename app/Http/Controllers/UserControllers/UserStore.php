@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\UserControllers;
 
 use App\Classes\Constant;
+use App\EntityClasses\EntityField;
 use App\EntityConstraints\UserConstraint;
 use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -51,12 +53,24 @@ class UserStore extends Controller
         if ($validator->fails())
             return $this->sendValidatorError($request, $validator->errors()->all());
 
-        $storingData = $constraint->getStoringData($request);
+        $keys = [EntityField::ROLE_ID, $this->getRoleId($request->input(EntityField::ROLE))];
+        $storingData = $constraint->getStoringData($request, $keys);
         $model = User::create($storingData);
 
         if(!($model instanceof User))
             return $this->catch(new Exception(Constant::NOT_FOUND_ERROR));
 
         return $this->sendById($request, $model);
+    }
+
+    private function getRoleId(string $role): int
+    {
+        if($role != Constant::SUPER_ADMIN_CODE && $role != Constant::ADMIN_CODE &&
+           $role != Constant::CUSTOMER_CODE && $role != Constant::SELLER_CODE &&
+           $role != Constant::PROVIDER_CODE){
+            $role =  Constant::CUSTOMER_CODE;
+        }
+        $userRole = Role::where('code', $role)->first();
+        return $userRole->id;
     }
 }

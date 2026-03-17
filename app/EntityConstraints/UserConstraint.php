@@ -30,7 +30,8 @@ class UserConstraint extends EntityConstraint
             new EntityModel(
                 type: EntityType::STRING,
                 name: EntityField::EMAIL,
-                label: FieldLabel::EMAIL
+                label: FieldLabel::EMAIL,
+                isNullable: true
             ),
             new EntityModel(
                 type: EntityType::STRING,
@@ -52,6 +53,7 @@ class UserConstraint extends EntityConstraint
             new EntityModel(
                 type: EntityType::INTEGER,
                 name: EntityField::ROLE_ID,
+                isNullable: true,
                 isForeignKey: true,
                 referenceKey: EntityField::ID,
                 referenceTable: EntityTable::ROLES

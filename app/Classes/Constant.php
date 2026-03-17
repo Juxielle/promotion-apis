@@ -43,19 +43,25 @@ class Constant
     const TEMP_FILE_PATH = "files-temp";
     const IMAGE_PATH = "images";
 
-    const DOC_1 = "doc-1";
-    const DOC_2 = "doc-2";
-    const DOC_3 = "doc-3";
-    const DOC_4 = "doc-4";
-    const DOC_5 = "doc-5";
-    const DOC_6 = "doc-6";
-    const DOC_7 = "doc-7";
-    const DOC_8 = "doc-8";
-
     const REQUIRED_DOCUMENT_ERROR = "required_document_error";
     const FAIL_TO_SAVE = "fail_to_save";
     const FAIL_TO_SAVE_DOCUMENT = "fail_to_save_document";
     const VALIDATOR_ERROR = "validator_error";
     const NOT_FOUND_ERROR = "not_found_error";
     const SAVE_FILE_ERROR = "save_file_error";
+
+    const ROOT_CODE = "root";
+    const ROOT_LABEL = "Utilisateur racine";
+    const SUPER_ADMIN_CODE = "super-admin";
+    const SUPER_ADMIN_LABEL = "Super administrateur";
+    const ADMIN_CODE = "admin";
+    const ADMIN_LABEL = "Administrateur";
+    const CUSTOMER_CODE = "customer";
+    const CUSTOMER_LABEL = "Client";
+    const SELLER_CODE = "seller";
+    const SELLER_LABEL = "Vendeur";
+    const PROVIDER_CODE = "provider";
+    const PROVIDER_LABEL = "Fournisseur";
+
+    const COMMAND_LINES = "command_lines";
 }

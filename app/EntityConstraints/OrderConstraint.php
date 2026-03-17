@@ -19,7 +19,6 @@ class OrderConstraint extends EntityConstraint
             new EntityModel(
                 type: EntityType::INTEGER,
                 name: EntityField::CUSTOMER_ID,
-                isNullable: true,
                 isForeignKey: true,
                 referenceKey: EntityField::ID,
                 referenceTable: EntityTable::CUSTOMERS

@@ -12,6 +12,9 @@ abstract class RoutePath
     const SERVICE_LIST_ROUTE = "backend.services.service-list";
     const CATEGORY_LIST_ROUTE = "backend.categories.category-list";
     const ORDER_LIST_ROUTE = "backend.orders.order-list";
+    const ROLE_LIST_ROUTE = "backend.roles.order-list";
+    const PERMISSION_LIST_ROUTE = "backend.permissions.order-list";
+    const PROMOTION_LIST_ROUTE = "backend.promotions.order-list";
 
     const USER_DETAIL = "backend.users.user-detail";
 }
