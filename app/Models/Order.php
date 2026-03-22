@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\EntityClasses\EntityField;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
 {
@@ -17,4 +18,9 @@ class Order extends Model
         EntityField::PAYMENT_ID,
         EntityField::STATUS,
     ];
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class, EntityField::ORDER_ID);
+    }
 }

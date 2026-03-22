@@ -42,6 +42,7 @@ class OrderStore extends Controller
 
         if($request->has(Constant::COMMAND_LINES)){
             $commandLines = $request->input(Constant::COMMAND_LINES);
+            //$keys = [];
             foreach ($commandLines as $commandLine) {
                 if(array_key_exists(EntityField::ARTICLE_COUNT, $commandLine)) continue;
                 if(array_key_exists(EntityField::PRICE, $commandLine)) continue;
@@ -53,7 +54,14 @@ class OrderStore extends Controller
                     EntityField::PRODUCT_ID => $commandLine[EntityField::PRODUCT_ID],
                 ];
                 OrderLine::create($keys);
+
+                /*$productId = $commandLine[EntityField::PRODUCT_ID];
+                $keys[$productId] = [
+                    EntityField::ARTICLE_COUNT => $commandLine[EntityField::ARTICLE_COUNT],
+                    EntityField::PRICE => $commandLine[EntityField::PRICE],
+                ];*/
             }
+            //$model->products->attach($keys);
         }
 
         return $this->sendById($request, $model);
